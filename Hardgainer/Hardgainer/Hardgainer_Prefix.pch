@@ -1,0 +1,14 @@
+//
+//  Hardgainer_Prefix.pch
+//  Hardgainer
+//
+//  Created by Farhan on 15/05/2015.
+//  Copyright (c) 2015 Farhan Mannan. All rights reserved.
+//
+
+#ifndef Hardgainer_Hardgainer_Prefix_pch
+#define Hardgainer_Hardgainer_Prefix_pch
+
+#include <Carbon/Carbon.h>
+
+#endif

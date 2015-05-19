@@ -2,22 +2,41 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AudioComponents</key>
+	<array>
+		<dict>
+			<key>description</key>
+			<string>Hardgainer AU</string>
+			<key>factoryFunction</key>
+			<string>HardgainerFactory</string>
+			<key>manufacturer</key>
+			<string>Frhn</string>
+			<key>name</key>
+			<string>Farhan Mannan: Hardgainer (Effect AU)</string>
+			<key>subtype</key>
+			<string>GAIN</string>
+			<key>type</key>
+			<string>aufx</string>
+			<key>version</key>
+			<integer>65536</integer>
+		</dict>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>$(EXECUTABLE_NAME)</string>
+	<string>Hardgainer</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.farhanmannan.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>com.farhanmannan.audiounit.hardgainer</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>Hardgainer</string>
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
-	<string>????</string>
+	<string>Frhn</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>CSResourcesFileMapped</key>

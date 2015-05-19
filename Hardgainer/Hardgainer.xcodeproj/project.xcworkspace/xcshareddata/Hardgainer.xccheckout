@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>44D09D92-1961-42FB-AD0C-03DEE54DED5B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Hardgainer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6AC78921F2FC7B6855919559BE5C5CC0162195BB</key>
+		<string>https://github.com/farhanmannan/hardgainer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Hardgainer/Hardgainer.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6AC78921F2FC7B6855919559BE5C5CC0162195BB</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/farhanmannan/hardgainer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6AC78921F2FC7B6855919559BE5C5CC0162195BB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6AC78921F2FC7B6855919559BE5C5CC0162195BB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Hardgainer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

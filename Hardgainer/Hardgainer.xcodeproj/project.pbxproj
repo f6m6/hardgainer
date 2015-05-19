@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D8614A4D1AFFB8420044FDAB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8614A4C1AFFB8420044FDAB /* CoreFoundation.framework */; };
+		D8614A541AFFB8420044FDAB /* Hardgainer.h in Headers */ = {isa = PBXBuildFile; fileRef = D8614A531AFFB8420044FDAB /* Hardgainer.h */; };
+		D8614A561AFFB8420044FDAB /* HardgainerPriv.h in Headers */ = {isa = PBXBuildFile; fileRef = D8614A551AFFB8420044FDAB /* HardgainerPriv.h */; };
+		D8614A581AFFB8420044FDAB /* Hardgainer.cp in Sources */ = {isa = PBXBuildFile; fileRef = D8614A571AFFB8420044FDAB /* Hardgainer.cp */; };
+		D8F1A72C1B0246E4002AD904 /* AudioUnit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F1A72B1B0246E4002AD904 /* AudioUnit.framework */; };
+		D8F1A72E1B0248CB002AD904 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F1A72D1B0248CB002AD904 /* CoreServices.framework */; };
+		D8F1A7311B0248EC002AD904 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F1A72F1B0248EC002AD904 /* AudioToolbox.framework */; };
+		D8F1A7321B0248EC002AD904 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F1A7301B0248EC002AD904 /* CoreAudio.framework */; };
+		D8F1A7341B024912002AD904 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F1A7331B024912002AD904 /* CoreAudioKit.framework */; };
+		D8F1A73A1B03A4F5002AD904 /* Hardgainer.component in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8614A491AFFB8420044FDAB /* Hardgainer.component */; };
+		D8F1A73D1B06802B002AD904 /* Hardgainer.exp in Sources */ = {isa = PBXBuildFile; fileRef = D8F1A73C1B06802B002AD904 /* Hardgainer.exp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D8F1A7381B03A34B002AD904 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "/Users/farhan/Library/Audio/Plug-Ins/Components";
+			dstSubfolderSpec = 0;
+			files = (
+				D8F1A73A1B03A4F5002AD904 /* Hardgainer.component in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D810AA0C1B0ABC03004EDB34 /* AUPublic */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AUPublic; path = ../../../AudioUnitExamples/AUPublic; sourceTree = "<group>"; };
+		D8614A491AFFB8420044FDAB /* Hardgainer.component */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Hardgainer.component; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8614A4C1AFFB8420044FDAB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		D8614A501AFFB8420044FDAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8614A511AFFB8420044FDAB /* HardgainerProj.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = HardgainerProj.xcconfig; sourceTree = "<group>"; };
+		D8614A521AFFB8420044FDAB /* HardgainerTarget.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = HardgainerTarget.xcconfig; sourceTree = "<group>"; };
+		D8614A531AFFB8420044FDAB /* Hardgainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hardgainer.h; sourceTree = "<group>"; };
+		D8614A551AFFB8420044FDAB /* HardgainerPriv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HardgainerPriv.h; sourceTree = "<group>"; };
+		D8614A571AFFB8420044FDAB /* Hardgainer.cp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Hardgainer.cp; sourceTree = "<group>"; };
+		D8F1A72B1B0246E4002AD904 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		D8F1A72D1B0248CB002AD904 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		D8F1A72F1B0248EC002AD904 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D8F1A7301B0248EC002AD904 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		D8F1A7331B024912002AD904 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		D8F1A7371B039FB6002AD904 /* HardgainerVersion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HardgainerVersion.h; sourceTree = "<group>"; };
+		D8F1A73C1B06802B002AD904 /* Hardgainer.exp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.exports; path = Hardgainer.exp; sourceTree = "<group>"; };
+		D8F1A73E1B068D21002AD904 /* Hardgainer_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Hardgainer_Prefix.pch; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D8614A461AFFB8420044FDAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F1A7341B024912002AD904 /* CoreAudioKit.framework in Frameworks */,
+				D8F1A7311B0248EC002AD904 /* AudioToolbox.framework in Frameworks */,
+				D8F1A7321B0248EC002AD904 /* CoreAudio.framework in Frameworks */,
+				D8F1A72E1B0248CB002AD904 /* CoreServices.framework in Frameworks */,
+				D8F1A72C1B0246E4002AD904 /* AudioUnit.framework in Frameworks */,
+				D8614A4D1AFFB8420044FDAB /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D8614A401AFFB8420044FDAB = {
+			isa = PBXGroup;
+			children = (
+				D8614A4E1AFFB8420044FDAB /* Hardgainer */,
+				D8614A4B1AFFB8420044FDAB /* Frameworks */,
+				D8614A4A1AFFB8420044FDAB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D8614A4A1AFFB8420044FDAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D8614A491AFFB8420044FDAB /* Hardgainer.component */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D8614A4B1AFFB8420044FDAB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8F1A7331B024912002AD904 /* CoreAudioKit.framework */,
+				D8F1A72F1B0248EC002AD904 /* AudioToolbox.framework */,
+				D8F1A7301B0248EC002AD904 /* CoreAudio.framework */,
+				D8F1A72D1B0248CB002AD904 /* CoreServices.framework */,
+				D8F1A72B1B0246E4002AD904 /* AudioUnit.framework */,
+				D8614A4C1AFFB8420044FDAB /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8614A4E1AFFB8420044FDAB /* Hardgainer */ = {
+			isa = PBXGroup;
+			children = (
+				D8614A511AFFB8420044FDAB /* HardgainerProj.xcconfig */,
+				D8614A521AFFB8420044FDAB /* HardgainerTarget.xcconfig */,
+				D8614A531AFFB8420044FDAB /* Hardgainer.h */,
+				D8F1A73C1B06802B002AD904 /* Hardgainer.exp */,
+				D810AA0C1B0ABC03004EDB34 /* AUPublic */,
+				D8614A551AFFB8420044FDAB /* HardgainerPriv.h */,
+				D8614A571AFFB8420044FDAB /* Hardgainer.cp */,
+				D8F1A73E1B068D21002AD904 /* Hardgainer_Prefix.pch */,
+				D8F1A7371B039FB6002AD904 /* HardgainerVersion.h */,
+				D8614A4F1AFFB8420044FDAB /* Supporting Files */,
+			);
+			path = Hardgainer;
+			sourceTree = "<group>";
+		};
+		D8614A4F1AFFB8420044FDAB /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D8614A501AFFB8420044FDAB /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D8614A471AFFB8420044FDAB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8614A561AFFB8420044FDAB /* HardgainerPriv.h in Headers */,
+				D8614A541AFFB8420044FDAB /* Hardgainer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D8614A481AFFB8420044FDAB /* Hardgainer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8614A5B1AFFB8420044FDAB /* Build configuration list for PBXNativeTarget "Hardgainer" */;
+			buildPhases = (
+				D8614A451AFFB8420044FDAB /* Sources */,
+				D8614A461AFFB8420044FDAB /* Frameworks */,
+				D8614A471AFFB8420044FDAB /* Headers */,
+				D8F1A7381B03A34B002AD904 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hardgainer;
+			productName = Hardgainer;
+			productReference = D8614A491AFFB8420044FDAB /* Hardgainer.component */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D8614A411AFFB8420044FDAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = "Farhan Mannan";
+				TargetAttributes = {
+					D8614A481AFFB8420044FDAB = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+				};
+			};
+			buildConfigurationList = D8614A441AFFB8420044FDAB /* Build configuration list for PBXProject "Hardgainer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D8614A401AFFB8420044FDAB;
+			productRefGroup = D8614A4A1AFFB8420044FDAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D8614A481AFFB8420044FDAB /* Hardgainer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D8614A451AFFB8420044FDAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D8F1A73D1B06802B002AD904 /* Hardgainer.exp in Sources */,
+				D8614A581AFFB8420044FDAB /* Hardgainer.cp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D8614A591AFFB8420044FDAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D8614A5A1AFFB8420044FDAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D8614A5C1AFFB8420044FDAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../CoreAudioUtilityClasses\"/**";
+				GCC_PREFIX_HEADER = /Users/farhan/Code/Hardgainer/Hardgainer/Hardgainer/Hardgainer_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../../CoreAudioUtilityClasses\"/**",
+				);
+				INFOPLIST_FILE = Hardgainer/Info.plist;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../CoreAudioUtilityClasses\"/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = component;
+			};
+			name = Debug;
+		};
+		D8614A5D1AFFB8420044FDAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../CoreAudioUtilityClasses\"/**";
+				GCC_PREFIX_HEADER = /Users/farhan/Code/Hardgainer/Hardgainer/Hardgainer/Hardgainer_Prefix.pch;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"\"$(SRCROOT)/../../CoreAudioUtilityClasses\"/**",
+				);
+				INFOPLIST_FILE = Hardgainer/Info.plist;
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../CoreAudioUtilityClasses\"/**";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = component;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D8614A441AFFB8420044FDAB /* Build configuration list for PBXProject "Hardgainer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8614A591AFFB8420044FDAB /* Debug */,
+				D8614A5A1AFFB8420044FDAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D8614A5B1AFFB8420044FDAB /* Build configuration list for PBXNativeTarget "Hardgainer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D8614A5C1AFFB8420044FDAB /* Debug */,
+				D8614A5D1AFFB8420044FDAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D8614A411AFFB8420044FDAB /* Project object */;
+}

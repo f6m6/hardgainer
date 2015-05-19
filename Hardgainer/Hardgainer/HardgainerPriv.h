@@ -2,7 +2,7 @@
  *  HardgainerPriv.h
  *  Hardgainer
  *
- *  Created by Farhan Mannan on 23/04/2015.
+ *  Created by Farhan Mannan on 10/05/2015.
  *  Copyright (c) 2015 Farhan Mannan. All rights reserved.
  *
  */
