@@ -77,17 +77,54 @@ public:
     
     virtual	bool SupportsTail () {return true;}
     virtual ComponentResult	Version () {return kHardgainerVersion;}
-    virtual ComponentResult	GetPresets (
-                                        CFArrayRef	*outData
+
+    
+    virtual ComponentResult GetPresets (
+                                        CFArrayRef        *outData
                                         ) const;
     
-    
     virtual OSStatus NewFactoryPresetSet (
-                                          const AUPreset	&inNewFactoryPreset
+                                          const AUPreset    &inNewFactoryPreset
                                           );
 protected:
     class HardgainerKernel : public AUKernelBase {
     public:
         HardgainerKernel (AUEffectBase *inAudioUnit);
+        
+        virtual void Process (
+                              const Float32    *inSourceP,
+                              Float32          *inDestP,
+                              UInt32           inFramesToProcess,
+                              UInt32           inNumChannels,
+                              bool             &ioSilence
+                              );
+        virtual void Reset();
+        
+    private:
+        enum     {kWaveArraySize = 2000};
+//        float    mSine [kWaveArraySize];             
+//        float    mSquare [kWaveArraySize];           
+        float    *waveArrayPointer;
+        Float32  mSampleFrequency;                   
+        long     mSamplesProcessed;                  
+        enum     {sampleLimit = (int) 10E6};         
+        float    mCurrentScale;                      
+        float    mNextScale;                         
+        
     };
 };
+
+#pragma mark ____Hardgainer Factory Preset Constants
+static const float kParameter_Preset_Gain_Small = 1.0;
+
+enum {
+    kPreset_Small   = 0,
+    kNumberPresets  = 1
+};
+
+static AUPreset kPresets [kNumberPresets] = {                
+    {kPreset_Small, CFSTR ("Small boost")}
+};
+
+static const int kPreset_Default = kPreset_Small;
+
