@@ -12,13 +12,13 @@
 
 CFStringRef HardgainerUUID(void)
 {
-	CHardgainer* theObj = new CHardgainer;
-	return theObj->UUID();
+    CHardgainer* theObj = new CHardgainer;
+    return theObj->UUID();
 }
 
 CFStringRef CHardgainer::UUID()
 {
-	return CFSTR("0001020304050607");
+    return CFSTR("0001020304050607");
 }
 
 AUDIOCOMPONENT_ENTRY(AUBaseFactory, Hardgainer)
@@ -42,38 +42,16 @@ Hardgainer::Hardgainer (AudioUnit component) : AUEffectBase (component) {
 
 Hardgainer::HardgainerKernel::HardgainerKernel (AUEffectBase *inAudioUnit ) :
 
-AUKernelBase (inAudioUnit), mSamplesProcessed (0), mCurrentScale (0) // 1
-{
-//    for (int i = 0; i < kWaveArraySize; ++i) {                           // 2
-//        double radians = i * 2.0 * pi / kWaveArraySize;
-//        mSine [i] = (sin (radians) + 1.0) * 0.5;
-//    }
-//    
-//    for (int i = 0; i < kWaveArraySize; ++i) {                           // 3
-//        double radians = i * 2.0 * pi / kWaveArraySize;
-//        radians = radians + 0.32;
-//        mSquare [i] =
-//        (
-//         sin (radians) +
-//         0.3 * sin (3 * radians) +
-//         0.15 * sin (5 * radians) +
-//         0.075 * sin (7 * radians) +
-//         0.0375 * sin (9 * radians) +
-//         0.01875 * sin (11 * radians) +
-//         0.009375 * sin (13 * radians) +
-//         0.8
-//         ) * 0.63;
-//    }
-    mSampleFrequency = GetSampleRate ();                                 // 4
-}
+AUKernelBase (inAudioUnit), mSamplesProcessed (0), mCurrentScale (0) 
+{ mSampleFrequency = GetSampleRate (); }
 
 #pragma mark ____Parameters
 
 ComponentResult Hardgainer::GetParameterInfo (
-                                               AudioUnitScope			inScope,
-                                               AudioUnitParameterID	inParameterID,
-                                               AudioUnitParameterInfo	&outParameterInfo
-                                               ) {
+                                              AudioUnitScope			inScope,
+                                              AudioUnitParameterID	inParameterID,
+                                              AudioUnitParameterInfo	&outParameterInfo
+                                              ) {
     ComponentResult result = noErr;
     
     outParameterInfo.flags =
@@ -83,7 +61,7 @@ ComponentResult Hardgainer::GetParameterInfo (
         switch (inParameterID) {
                 
             case kParameter_Gain:
-
+                
                 AUBase::FillInParameterName (
                                              outParameterInfo,
                                              kParamName_Gain,
@@ -105,18 +83,13 @@ ComponentResult Hardgainer::GetParameterInfo (
 }
 
 ComponentResult Hardgainer::GetParameterValueStrings (
-                                                       AudioUnitScope			inScope,
-                                                       AudioUnitParameterID	inParameterID,
-                                                       CFArrayRef				*outStrings
-                                                       ) {
+                                                      AudioUnitScope			inScope,
+                                                      AudioUnitParameterID	inParameterID,
+                                                      CFArrayRef				*outStrings
+                                                      ) {
     if (inScope == kAudioUnitScope_Global) {
         
-        // When this method gets called by the AUBase::DispatchGetPropertyInfo method, which
-        // provides a null value for the outStrings parameter, just return without error.
         if (outStrings == NULL) return noErr;
-        
-        // Creates a new immutable array containing the menu item names, and places the array
-        // in the outStrings output parameter.
         *outStrings = NULL ;
         return noErr;
     }
@@ -124,11 +97,11 @@ ComponentResult Hardgainer::GetParameterValueStrings (
 }
 
 #pragma mark ____Factory Presets
-ComponentResult Hardgainer::GetPresets (                     
-                                         CFArrayRef *outData
-                                         ) const {
+ComponentResult Hardgainer::GetPresets (
+                                        CFArrayRef *outData
+                                        ) const {
     
-    if (outData == NULL) return noErr;                       
+    if (outData == NULL) return noErr;
     
     CFMutableArrayRef presetsArray = CFArrayCreateMutable (
                                                            NULL,
@@ -136,7 +109,7 @@ ComponentResult Hardgainer::GetPresets (
                                                            NULL
                                                            );
     
-    for (int i = 0; i < kNumberPresets; ++i) {                
+    for (int i = 0; i < kNumberPresets; ++i) {
         CFArrayAppendValue (
                             presetsArray,
                             &kPresets [i]
@@ -147,32 +120,24 @@ ComponentResult Hardgainer::GetPresets (
     return noErr;
 }
 
-OSStatus Hardgainer::NewFactoryPresetSet (                      
-                                           const AUPreset &inNewFactoryPreset
-                                           ) {
-    SInt32 chosenPreset = inNewFactoryPreset.presetNumber;          
+OSStatus Hardgainer::NewFactoryPresetSet (
+                                          const AUPreset &inNewFactoryPreset
+                                          ) {
+    SInt32 chosenPreset = inNewFactoryPreset.presetNumber;
     
-    if (                                                            
+    if (
         chosenPreset == kPreset_Small
         ) {
-        for (int i = 0; i < kNumberPresets; ++i) {                  
+        for (int i = 0; i < kNumberPresets; ++i) {
             if (chosenPreset == kPresets[i].presetNumber) {
-                switch (chosenPreset) {                             
+                switch (chosenPreset) {
                         
-                    case kPreset_Small:                             
-
-                        SetParameter (                              
-                                      kParameter_Gain,
-                                      kParameter_Preset_Gain_Small
-                                      );
-            
-
+                    case kPreset_Small:
+                        SetParameter (kParameter_Gain, kParameter_Preset_Gain_Small);
                         break;
                 }
-                SetAFactoryPresetAsCurrent (                        
-                                            kPresets [i]
-                                            );
-                return noErr;                                       
+                SetAFactoryPresetAsCurrent (kPresets [i]);
+                return noErr;
             }
         }
     }
@@ -181,24 +146,24 @@ OSStatus Hardgainer::NewFactoryPresetSet (
 
 
 
-void Hardgainer::HardgainerKernel::Process (                        // 1
-                                              const Float32   *inSourceP,                                       // 2
-                                              Float32         *inDestP,                                         // 3
-                                              UInt32          inSamplesToProcess,                               // 4
-                                              UInt32          inNumChannels,                                    // 5
-                                              bool            &ioSilence                                        // 6
-) {
-    if (!ioSilence) {                                                 // 7
+void Hardgainer::HardgainerKernel::Process (
+                                            const Float32   *inSourceP,
+                                            Float32         *inDestP,
+                                            UInt32          inSamplesToProcess,
+                                            UInt32          inNumChannels,
+                                            bool            &ioSilence
+                                            ) {
+    if (!ioSilence) {
         
         const Float32 *sourceP = inSourceP;
         Float32 *destP = inDestP;
         int n = inSamplesToProcess;
         Float32 hardgainerGain = GetParameter(kParameter_Gain);
-        
+        Float32 factor = pow(10, hardgainerGain/20.0);
         while(n--)
         {
             float input = *sourceP++;
-            float output = input*hardgainerGain;
+            float output = input * factor;
             *destP++ = output;
         }
         
@@ -207,34 +172,27 @@ void Hardgainer::HardgainerKernel::Process (                        // 1
 }
 
 void Hardgainer::HardgainerKernel::Reset() {
-    mCurrentScale        = 0;                    // 1
-    mSamplesProcessed    = 0;                    // 2
+    mCurrentScale        = 0;
+    mSamplesProcessed    = 0;
 }
 
 #pragma mark ____Properties
 
-// this stuff below was presumably in the template but not in the tutorial
-
-
 ComponentResult Hardgainer::GetPropertyInfo (
-                                              // This audio unit doesn't define any custom properties, so it uses this generic code for
-                                              // this method.
-                                              AudioUnitPropertyID	inID,
-                                              AudioUnitScope		inScope,
-                                              AudioUnitElement	inElement,
-                                              UInt32				&outDataSize,
-                                              Boolean				&outWritable
-                                              ) {
+                                             AudioUnitPropertyID	inID,
+                                             AudioUnitScope		inScope,
+                                             AudioUnitElement	inElement,
+                                             UInt32				&outDataSize,
+                                             Boolean				&outWritable
+                                             ) {
     return AUEffectBase::GetPropertyInfo (inID, inScope, inElement, outDataSize, outWritable);
 }
 
 ComponentResult Hardgainer::GetProperty (
-                                          // This audio unit doesn't define any custom properties, so it uses this generic code for
-                                          // this method.
-                                          AudioUnitPropertyID inID,
-                                          AudioUnitScope 		inScope,
-                                          AudioUnitElement 	inElement,
-                                          void				*outData
-                                          ) {
+                                         AudioUnitPropertyID inID,
+                                         AudioUnitScope 		inScope,
+                                         AudioUnitElement 	inElement,
+                                         void				*outData
+                                         ) {
     return AUEffectBase::GetProperty (inID, inScope, inElement, outData);
 }
