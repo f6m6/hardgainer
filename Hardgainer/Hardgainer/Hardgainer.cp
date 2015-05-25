@@ -28,8 +28,8 @@ Hardgainer::Hardgainer (AudioUnit component) : AUEffectBase (component) {
     Globals () -> UseIndexedParameters (kNumberOfParameters);
     SetParameter (
                   kParameter_Gain,
-                  kDefaultValue_Gain
-                  );
+                  kDefaultValue_Gain);
+    
     SetAFactoryPresetAsCurrent (kPresets [kPreset_Default]);
     
     
@@ -190,76 +190,18 @@ void Hardgainer::HardgainerKernel::Process (                        // 1
 ) {
     if (!ioSilence) {                                                 // 7
         
-        const Float32 *sourceP = inSourceP;                           // 8
+        const Float32 *sourceP = inSourceP;
+        Float32 *destP = inDestP;
+        int n = inSamplesToProcess;
+        Float32 hardgainerGain = GetParameter(kParameter_Gain);
         
-        Float32  *destP = inDestP,                                    // 9
-        inputSample,                                         // 10
-        outputSample,                                        // 11
-//        tremoloFrequency,                                    // 12
-//        tremoloDepth,                                        // 13
-        samplesPerTremoloCycle,                              // 14
-        rawTremoloGain,                                      // 15
-        tremoloGain;                                         // 16
-        
-//        int      tremoloWaveform;                                     // 17
-        int hardgainerGain;
-        
-//        tremoloFrequency = GetParameter (kParameter_Frequency);       // 18
-//        tremoloDepth     = GetParameter (kParameter_Depth);           // 19
-//        tremoloWaveform  =
-//        (int) GetParameter (kParameter_Waveform);                 // 20
-
-        hardgainerGain = GetParameter(kParameter_Gain);
-        
-//        if (tremoloWaveform != kSineWave_Tremolo_Waveform             // 21
-//            && tremoloWaveform != kSquareWave_Tremolo_Waveform)
-//            tremoloWaveform = kSquareWave_Tremolo_Waveform;
-//        
-//        if (tremoloWaveform == kSineWave_Tremolo_Waveform)  {         // 22
-//            waveArrayPointer = &mSine [0];
-//        } else {
-//            waveArrayPointer = &mSquare [0];
-//        }
-//        
-//        if (tremoloFrequency < kMinimumValue_Tremolo_Freq)            // 23
-//            tremoloFrequency = kMinimumValue_Tremolo_Freq;
-//        if (tremoloFrequency > kMaximumValue_Tremolo_Freq)
-//            tremoloFrequency = kMaximumValue_Tremolo_Freq;
-//        
-//        if (tremoloDepth     < kMinimumValue_Tremolo_Depth)           // 24
-//            tremoloDepth     = kMinimumValue_Tremolo_Depth;
-//        if (tremoloDepth     > kMaximumValue_Tremolo_Depth)
-//            tremoloDepth     = kMaximumValue_Tremolo_Depth;
-        
-//        samplesPerTremoloCycle = mSampleFrequency / tremoloFrequency; // 25
-        mNextScale = kWaveArraySize ; // ... divided by samplesPerTremoloCycle;         // 26
-        
-        // the sample processing loop ////////////////
-        for (int i = inSamplesToProcess; i > 0; --i) {                // 27
-            
-            int index =                                               // 28
-            static_cast<long>(mSamplesProcessed * mCurrentScale) %
-            kWaveArraySize;
-            
-            if ((mNextScale != mCurrentScale) && (index == 0)) {      // 29
-                mCurrentScale = mNextScale;
-                mSamplesProcessed = 0;
-            }
-            
-            if ((mSamplesProcessed >= sampleLimit) && (index == 0))   // 30
-                mSamplesProcessed = 0;
-            
-            rawTremoloGain = waveArrayPointer [index];                // 31
-            
-//            tremoloGain       = (rawTremoloGain * tremoloDepth -      // 32
-//                                 tremoloDepth + 100.0) * 0.01;
-            inputSample       = *sourceP;                             // 33
-            outputSample      = (inputSample + hardgainerGain);          // 34
-            *destP            = outputSample;                         // 35
-            sourceP           += 1;                                   // 36
-            destP             += 1;                                   // 37
-            mSamplesProcessed += 1;                                   // 38
+        while(n--)
+        {
+            float input = *sourceP++;
+            float output = input + hardgainerGain;
+            *destP++ = output;
         }
+        
     }
     
 }
