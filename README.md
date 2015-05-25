@@ -1,2 +1,3 @@
 # hardgainer
-Painfully converting the Apple sample audio unit "Tremolo Unit" into a gain plugin in Xcode 6
+
+A gain plugin made in Xcode 6 using the Audio Unit framework but no template (instead using a lot of Apple Sample code)
