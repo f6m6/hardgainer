@@ -198,7 +198,7 @@ void Hardgainer::HardgainerKernel::Process (                        // 1
         while(n--)
         {
             float input = *sourceP++;
-            float output = input + hardgainerGain;
+            float output = input*hardgainerGain;
             *destP++ = output;
         }
         
