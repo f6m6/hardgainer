@@ -33,7 +33,7 @@ static const float kMaximumValue_Gain	= 2.0;
 
 enum {
     kParameter_Gain	= 0,
-    kNumberOfParameters = 0
+    kNumberOfParameters = 1
 };
 
 #pragma mark ____Hardgainer
